@@ -10,5 +10,5 @@ services:
       - DB_DIALECT=${DB_DIALECT}
       - DB_NAME=${DB_NAME}
     volumes:
-      - ./mods-available/sql:/tmp/custom-sql:ro
-    command: sh -c "cat /tmp/custom-sql > /etc/freeradius/mods-available/sql && chmod 640 /etc/freeradius/mods-available/sql && chown freerad:freerad /etc/freeradius/mods-available/sql && ln -sf /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/sql && freeradius -f"
+      - ./mods-available/sql:/tmp/custom-sql.txt:ro
+    command: sh -c "cat /tmp/custom-sql.txt > /etc/freeradius/mods-available/sql && chmod 640 /etc/freeradius/mods-available/sql && chown freerad:freerad /etc/freeradius/mods-available/sql && ln -sf /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/sql && freeradius -f"
