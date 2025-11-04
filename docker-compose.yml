@@ -11,4 +11,4 @@ services:
       - DB_NAME=${DB_NAME}
     volumes:
       - ./mods-available:/etc/freeradius/mods-available
-    command: sh -c "ln -sf /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/ && freeradius -f"
+    command: sh -c "ln -sf /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/sql && freeradius -f"
