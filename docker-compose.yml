@@ -11,4 +11,4 @@ services:
       - DB_NAME=${DB_NAME}
     volumes:
       - ./sql:/etc/freeradius/mods-available/sql
-      - ./docker-entrypoint.sh:/docker-entrypoint.sh
+      - ./sql:/etc/freeradius/mods-enabled/sql
