@@ -10,5 +10,5 @@ services:
       - DB_DIALECT=${DB_DIALECT}
       - DB_NAME=${DB_NAME}
     volumes:
-      - ./sql:/etc/freeradius/mods-available/sql
-      - ./sql:/etc/freeradius/mods-enabled/sql
+      - ./mods-available:/etc/freeradius/mods-available
+    command: sh -c "ln -sf /etc/freeradius/mods-available/sql /etc/freeradius/mods-enabled/ && freeradius -f"
